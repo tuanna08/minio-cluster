@@ -125,3 +125,40 @@ $ systemctl start minio.service
 - Get the public ip of one of your nodes and access it on port 9000:
 ![minio](./images/minio_gui.png)
 
+### Using the Python API
+- Create a virtual environment and install minio:
+```
+$ virtualenv .venv-minio -p /usr/local/bin/python3.7  && source .venv-minio/bin/activate
+$ pip install minio
+```
+
+- Create a file that we will upload to minio:
+    ```
+    $ echo "ok" > file.txt
+    ```
+- Enter the python interpreter, instantiate a minio client, create a bucket and upload the text file that we created:
+```
+>>> from minio import Minio
+>>> minioClient = Minio('34.248.202.30:9000', access_key='AKaHEgQ4II0S7BjT6DjAUDA4BX', secret_key='SKFzHq5iDoQgF7gyPYRFhzNMYSvY6ZFMpH', secure=False)
+>>> minioClient.make_bucket('log-bucket', location='us-east-1’)
+>>> minioClient.fput_object('log-bucket', 'objects/file.txt', 'file.txt’)
+```
+
+- Let's list the objects in our newly created bucket:
+```
+>>> objects = minioClient.list_objects('log-bucket', prefix='', recursive=True)
+>>> for obj in objects:
+...     print(obj.object_name)
+...
+objects/file.txt
+```
+
+- We can also list our buckets:
+```
+>>> buckets = minioClient.list_buckets()
+>>> for bucket in buckets:
+...     print(bucket.name)
+...
+log-bucket
+my-first-bucket
+```
