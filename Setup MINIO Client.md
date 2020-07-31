@@ -1,4 +1,4 @@
-# Tutorial Setup MINIO Slient
+# Tutorial Setup MINIO Client
 
 ### setup venv
 - setup golang
