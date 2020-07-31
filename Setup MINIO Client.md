@@ -74,3 +74,4 @@ or
 
 - Follow Minio Gui
 ![minio_gui](./images/wal_storage.png)
+
