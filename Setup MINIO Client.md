@@ -1,4 +1,4 @@
-# Tutorial setup watch folder
+# Tutorial Setup MINIO Slient
 
 ### setup venv
 - setup golang
