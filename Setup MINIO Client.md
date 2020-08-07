@@ -65,7 +65,7 @@ Added `minio` successfully.
 ```
 # ./mc mirror --watch --active-active /wal_archive/ minio/wal-storage # push data to storage
 or
-# ./mc mirror --watch --active-active minio/wal-storage /wal_archive_recovery/ # pull data to storage
+# ./mc mirror --watch --active-active minio/wal-storage /wal_archive_recovery/ # pull data from storage
 ...folder/hello.txt:  160.00 MiB / 160.00 MiB ┃▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓┃ 3.28 MiB/s
 ...folder/hello.txt:  160.00 MiB / 160.00 MiB ┃▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓┃ 3.27 MiB/s
 ...folder/hello.txt:  160.00 MiB / 160.00 MiB ┃▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓┃ 3.26 MiB/s
